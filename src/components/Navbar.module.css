@@ -1,0 +1,20 @@
+#heading{
+    font-size: 70px;
+    color: blueviolet;
+    background-color: white;
+    padding: 30px 40px;
+    margin: 20px;
+}
+.subtext{
+    font-size: 30px;
+    border: 1px solid green;
+}
+@media screen and (width < 480px) {
+    .heading{
+        font-size: 30px;
+        color: green;
+        background-color: white;
+        padding: 20px 30px;
+        margin: 10px;
+    }
+}

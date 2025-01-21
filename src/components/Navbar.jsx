@@ -15,9 +15,9 @@ const Navbar = () => {
 
   return (
     <div>
-      <h1 style={{fontSize: "40px", color: "red"}}>Hello World</h1>
+      {/* <h1 style={{fontSize: "40px", color: "red"}}>Hello World</h1>
       <h1 style={myStyle}>New Text is here</h1>
-        <h1 id={style.heading} className=''>This is my Nav Bar</h1>
+        <h1 id={style.heading} className=''>This is my Nav Bar</h1> */}
         {/* <p className={style.subtext}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam perspiciatis ratione iste deserunt incidunt numquam molestias alias, quia et non sed hic, rem excepturi molestiae aut, iure cumque eaque temporibus?</p> */}
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
   <div className="container-fluid">

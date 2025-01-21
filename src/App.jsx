@@ -3,6 +3,7 @@ import { useState } from "react"
 import Banner from "./components/Banner"
 import Footer from "./components/Footer"
 import Navbar from "./components/Navbar"
+import ProductPage from "./components/ProductPage"
 
 function nameOfFuction(){
   console.log("Hello Everybody")
@@ -42,6 +43,7 @@ const functionName = () => {
   return (
     <>
     <Navbar/>
+    <ProductPage/>
     <Banner/>
 
     <h1>{displayName ? `Hello, You are welcome ${myName}!` : "Enter your name Below"}</h1>

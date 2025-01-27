@@ -5,6 +5,7 @@ const ProductPage = () => {
   const [lastName, setlastName] = useState("");
   const [age, setage] = useState(0);
   const [email, setemail] = useState("");
+  const [imageProduct, setimageProduct] = useState("");
   const [allUsers, setallUsers] = useState([]);
   const [editUsers, seteditUser] = useState(null)
 
@@ -14,7 +15,7 @@ const ProductPage = () => {
   // }
 
   const handleSubmit = () => {
-    let newUser = { firstName, lastName, age, email };
+    let newUser = { firstName, lastName, age, email, imageProduct };
 
     if(editUsers !== null){
       let updatedUser = [...allUsers]
@@ -90,6 +91,13 @@ const ProductPage = () => {
       />
       <input
         className="mb-3 form-control"
+        type="text"
+        placeholder="enter image"
+        onChange={() => setimageProduct(event.target.value)}
+        value={imageProduct}
+      />
+      <input
+        className="mb-3 form-control"
         type="email"
         placeholder="example@gmail.com"
         onChange={() => setemail(event.target.value)}
@@ -108,12 +116,14 @@ const ProductPage = () => {
         </div>
       ))} */}
 
-      <table className="table table-stripped">
+      <table height={100} border={2} className="table table-stripped">
         <tr>
+        <th>S/N</th>
           <th>First Name</th>
           <th>Last Name</th>
           <th>Age</th>
           <th>Email</th>
+          <th>Image</th>
           <th>Action</th>
         </tr>
         {allUsers == 0 ? 
@@ -121,10 +131,12 @@ const ProductPage = () => {
       
         allUsers.map((users, index) => (
           <tr key={index}>
+            <td>{index + 1}</td>
             <td>{users.firstName}</td>
             <td>{users.lastName}</td>
             <td>{users.age}</td>
             <td>{users.email}</td>
+            <td><img width={50} src={users.imageProduct} alt="" /></td>
             <button onClick={()=>editUser(index)} className="btn btn-warning me-3">Edit</button>
             <button onClick={()=>deleteUser(index)} className="btn btn-danger">
               Delete

@@ -4,6 +4,8 @@ import Banner from "./components/Banner"
 import Footer from "./components/Footer"
 import Navbar from "./components/Navbar"
 import ProductPage from "./components/ProductPage"
+import ButtonComponent from "./components/ButtonComponent"
+import CardsComponent from "./components/CardsComponent"
 
 function nameOfFuction(){
   console.log("Hello Everybody")
@@ -40,9 +42,22 @@ const functionName = () => {
   //   // myAge += 1
   // }
 
+ 
+
   return (
     <>
+
     <Navbar/>
+    <CardsComponent title="Cards Section" style="text-center text-success"/>
+
+    
+
+
+
+
+
+
+
     <ProductPage/>
     <Banner/>
 

@@ -1,81 +1,28 @@
-// JSX - is a functional component of react that returns javascript + HTML and export it
-import { useState } from "react"
-import Banner from "./components/Banner"
-import Footer from "./components/Footer"
-import Navbar from "./components/Navbar"
-import ProductPage from "./components/ProductPage"
-import ButtonComponent from "./components/ButtonComponent"
-import CardsComponent from "./components/CardsComponent"
+import React from 'react'
+import { Navigate, Routes, Route } from 'react-router-dom'
+import HomePage from './Pages/HomePage'
+import AboutPage from './Pages/AboutPage'
+import Navbar from './components/Navbar'
+import NotFound from './Pages/NotFound'
+import Register from './Pages/Register'
+import UserProfile from './Pages/UserProfile'
 
-function nameOfFuction(){
-  console.log("Hello Everybody")
-}
-
-const functionName = () => {
-  // var myName = "Esther"
-  // var myAge = 10
-
-  const [myName, setmyName] = useState("")
-  const [myAge, setmyAge] = useState(10)
-  const [displayName, setdisplayName] = useState("")
-  const [students, setstudents] = useState([])
-  const [modal, setmodal] = useState(false)
-
-  // const [first, setfirst] = useState(second)
-
-  const handleChange = (event) =>{
-    // console.log(event.target.value)
-    setmyName(event.target.value)
-  }
-
-  const handleSubmit = () =>{
-    setdisplayName(myName)
-  }
-
-
-  // const increaseAge = (num) =>{
-  //   // myAge++
-  //   // setmyAge(myAge+1)
-  //   console.log(myAge)
-  //   // console.log(myName)
-  //   // myAge = myAge + 1
-  //   // myAge += 1
-  // }
-
- 
-
+const App = () => {
   return (
     <>
-
     <Navbar/>
-    <CardsComponent title="Cards Section" style="text-center text-success"/>
+      <Routes>
+        <Route path='/' element={<HomePage desc="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis maxime beatae dicta incidunt impedit? Eos vel quas sed incidunt, error eaque perspiciatis sunt consectetur magnam! Accusantium, cupiditate. In, doloribus fuga?"/>} />
+        <Route path='/sp-about_us' element={<AboutPage/>}/>
+        <Route path='/about/' element={<Navigate to = "/sp-about_us" />}/>
+        <Route path='/about-us' element={<Navigate to = "/sp-about_us" />}/>
+        <Route path='/register' element= {<Register/>}/>
+        <Route path='/register/:username' element={<UserProfile/>}/>
 
-    
-
-
-
-
-
-
-
-    <ProductPage/>
-    <Banner/>
-
-    <h1>{displayName ? `Hello, You are welcome ${myName}!` : "Enter your name Below"}</h1>
-    <input type="text" onChange={handleChange}/>
-    <button onClick={handleSubmit}>Change Text</button>
-  
-
-    <h1>{myAge}</h1>
-    <button onClick={()=>setmyAge(myAge+1)}>Increase Age</button>
-
-
-    <Footer/>
+        <Route path='*' element={<NotFound/>}/>
+      </Routes>
     </>
-   
   )
 }
 
-export default functionName
-
-//Interpolation
+export default App

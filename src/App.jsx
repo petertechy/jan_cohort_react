@@ -6,6 +6,11 @@ import Navbar from './components/Navbar'
 import NotFound from './Pages/NotFound'
 import Register from './Pages/Register'
 import UserProfile from './Pages/UserProfile'
+import Dashboard from './Pages/Dashboard'
+import LandingPage from './components/LandingPage'
+import Settings from './Pages/Settings'
+import Effect from './Pages/Effect'
+import MakeRequest from './Pages/MakeRequest'
 
 const App = () => {
   return (
@@ -14,10 +19,23 @@ const App = () => {
       <Routes>
         <Route path='/' element={<HomePage desc="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis maxime beatae dicta incidunt impedit? Eos vel quas sed incidunt, error eaque perspiciatis sunt consectetur magnam! Accusantium, cupiditate. In, doloribus fuga?"/>} />
         <Route path='/sp-about_us' element={<AboutPage/>}/>
-        <Route path='/about/' element={<Navigate to = "/sp-about_us" />}/>
+        <Route path='/about' element={<Navigate to = "/sp-about_us" />}/>
         <Route path='/about-us' element={<Navigate to = "/sp-about_us" />}/>
         <Route path='/register' element= {<Register/>}/>
-        <Route path='/register/:username' element={<UserProfile/>}/>
+        {/* <Route path='/register/:username' element={<UserProfile/>}/> */}
+        <Route path='effect' element={<Effect/>}/>
+        <Route path='/make-request' element={<MakeRequest/>}/>
+
+
+
+        <Route path="/dashboard" element={<Dashboard />}>
+        <Route index element={<LandingPage />} /> 
+        <Route path="/dashboard/profile/:username" element={<UserProfile/>}/>
+        <Route path="/dashboard/settings" element={<Settings/>}/>
+      </Route>
+
+
+
 
         <Route path='*' element={<NotFound/>}/>
       </Routes>

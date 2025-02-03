@@ -7,8 +7,12 @@ const Effect = () => {
 
 
     useEffect(() => {
-      console.log("This ran already")
-    }, [num])
+      console.log("I just landed in the Effect component")
+
+      return () => {
+        console.log("I just left the component")
+      };
+    },[])
     
 
   return (

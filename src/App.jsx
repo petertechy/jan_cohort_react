@@ -11,6 +11,7 @@ import LandingPage from './components/LandingPage'
 import Settings from './Pages/Settings'
 import Effect from './Pages/Effect'
 import MakeRequest from './Pages/MakeRequest'
+import FormikPage from './Pages/FormikPage'
 
 const App = () => {
   return (
@@ -24,7 +25,8 @@ const App = () => {
         <Route path='/register' element= {<Register/>}/>
         {/* <Route path='/register/:username' element={<UserProfile/>}/> */}
         <Route path='effect' element={<Effect/>}/>
-        <Route path='/make-request' element={<MakeRequest/>}/>
+        <Route path='make-request' element={<MakeRequest/>}/>
+        <Route path="formik-form" element={<FormikPage/>}/>
 
 
 

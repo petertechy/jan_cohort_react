@@ -12,6 +12,9 @@ import Settings from './Pages/Settings'
 import Effect from './Pages/Effect'
 import MakeRequest from './Pages/MakeRequest'
 import FormikPage from './Pages/FormikPage'
+import Contact from './Pages/Contact'
+import Services from './Pages/Services'
+import SignUp from './Pages/SignUp'
 
 const App = () => {
   return (
@@ -27,6 +30,9 @@ const App = () => {
         <Route path='effect' element={<Effect/>}/>
         <Route path='make-request' element={<MakeRequest/>}/>
         <Route path="formik-form" element={<FormikPage/>}/>
+        <Route path="contact" element={<Contact/>}/>
+        <Route path="services" element={<Services/>}/>
+        <Route path="signup" element={<SignUp/>}/>
 
 
 
@@ -34,6 +40,7 @@ const App = () => {
         <Route index element={<LandingPage />} /> 
         <Route path="/dashboard/profile/:username" element={<UserProfile/>}/>
         <Route path="/dashboard/settings" element={<Settings/>}/>
+
       </Route>
 
 

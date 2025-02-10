@@ -11,7 +11,7 @@ const SignUp = () => {
 
   const handleRegister = ()=>{
     let userObject = {firstName, lastName, email, age, password}
-    console.log(userObject)
+    // console.log(userObject)
 let url = "http://localhost:5500/user/register"
     axios.post(url, userObject)
     .then((response)=>{

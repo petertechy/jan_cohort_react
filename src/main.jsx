@@ -10,7 +10,7 @@ import { Provider } from "react-redux";
 import counterReducer from "./Redux/counterSlice.js";
 
 export const store = configureStore({
-  reducer: {counterReducer},
+  reducer: {counterReducer, },
 });
 
 createRoot(document.getElementById("root")).render(

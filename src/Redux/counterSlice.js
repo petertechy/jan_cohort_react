@@ -16,11 +16,16 @@ export const counterSlice = createSlice({
         },
         increaseByNumber: (state, action)=>{
             state.count += action.payload
+        },
+        saveStudent: (state, action)=>{
+            state.allStudents.push(action.payload)
+            console.log(action.payload)
+            
         }
     }
 
 })
 
-export const {increment, decrement, increaseByNumber} = counterSlice.actions
+export const {increment, decrement, increaseByNumber, saveStudent} = counterSlice.actions
 
 export default counterSlice.reducer

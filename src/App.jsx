@@ -15,6 +15,7 @@ import FormikPage from './Pages/FormikPage'
 import Contact from './Pages/Contact'
 import Services from './Pages/Services'
 import SignUp from './Pages/SignUp'
+import SignIn from './Pages/SignIn'
 
 const App = () => {
   return (
@@ -33,6 +34,7 @@ const App = () => {
         <Route path="contact" element={<Contact/>}/>
         <Route path="services" element={<Services/>}/>
         <Route path="signup" element={<SignUp/>}/>
+        <Route path="signin" element={<SignIn/>}/>
 
 
 

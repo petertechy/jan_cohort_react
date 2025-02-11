@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const [firstName, setfirstName] = useState("");
@@ -7,6 +8,9 @@ const SignUp = () => {
   const [email, setemail] = useState("");
   const [age, setage] = useState(0);
   const [password, setpassword] = useState("");
+  const [message, setmessage] = useState("")
+
+  let navigate = useNavigate();
 
 
   const handleRegister = ()=>{
@@ -16,6 +20,12 @@ let url = "http://localhost:5500/user/register"
     axios.post(url, userObject)
     .then((response)=>{
         console.log(response)
+        if(response.data.status === true){
+          navigate('/signin')
+        }else{
+          console.log("Wrong Details")
+          setmessage(response.data.message)
+        }
     })
     .catch((err)=>{
         console.log(err)
@@ -25,6 +35,7 @@ let url = "http://localhost:5500/user/register"
   return (
     <>
       <h1>Sign Up</h1>
+      {message ? <h1 className="alert alert-danger">{message}</h1> : ""}
       <input
         type="text"
         placeholder="Enter your First Name"

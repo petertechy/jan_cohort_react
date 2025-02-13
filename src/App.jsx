@@ -16,6 +16,9 @@ import Contact from './Pages/Contact'
 import Services from './Pages/Services'
 import SignUp from './Pages/SignUp'
 import SignIn from './Pages/SignIn'
+import Reference from './Pages/Reference'
+import ClassReact from './Pages/ClassReact'
+import Profile from './Pages/Profile'
 
 const App = () => {
   return (
@@ -35,6 +38,9 @@ const App = () => {
         <Route path="services" element={<Services/>}/>
         <Route path="signup" element={<SignUp/>}/>
         <Route path="signin" element={<SignIn/>}/>
+        <Route path="reference" element={<Reference/>}/>
+        <Route path="class" element={<ClassReact title="A new Class Component"/>}/>
+        <Route path="profile" element={<Profile/>}/>
 
 
 

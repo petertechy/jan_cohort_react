@@ -1,10 +1,10 @@
 import { Component } from "react";
 
 class ClassReact extends Component {
-    constructor(props) {
-        super(props);
-    }
-    state = { myNumber:12 }
+    // constructor(props) {
+    //     super(props);
+    // }
+    state = { myNumber:10 }
     
     increase = () =>{
         console.log(this.state.myNumber)
@@ -15,25 +15,25 @@ class ClassReact extends Component {
         console.log("Component don mount")
     }
 
-    componentDidUpdate = () =>{
-        console.log("Component has updated")
-    }
+    // componentDidUpdate = () =>{
+    //     console.log("Component has updated")
+    // }
 
     componentWillUnmount = () =>{
         console.log("component don unmount")
     }
 
-    compon
 
     render() { 
-        console.log(this.props)
+        // console.log(this.props)
         return ( 
             <>
-               <h1>{this.props.title}</h1> 
+               {/* <h1>{this.props.title}</h1>  */}
+               <h1>This is a new text</h1>
                <h1>{this.state.myNumber}</h1>
                <button onClick={this.increase}>Increase Number</button>
 
-               <table className="table table-bordered table-stripped my-5">
+               {/* <table className="table table-bordered table-stripped my-5">
                 <tr>
                     <td>S/N</td>
                     <td>Name</td>
@@ -52,7 +52,7 @@ class ClassReact extends Component {
                     <td>12</td>
                     <td>FEMALE</td>
                 </tr>
-               </table>
+               </table> */}
             </>
          );
     }

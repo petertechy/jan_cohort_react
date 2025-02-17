@@ -20,6 +20,8 @@ import Reference from './Pages/Reference'
 import ClassReact from './Pages/ClassReact'
 import Profile from './Pages/Profile'
 
+let token = localStorage.token
+
 const App = () => {
   return (
     <>
@@ -40,7 +42,7 @@ const App = () => {
         <Route path="signin" element={<SignIn/>}/>
         <Route path="reference" element={<Reference/>}/>
         <Route path="class" element={<ClassReact title="A new Class Component"/>}/>
-        <Route path="profile" element={<Profile/>}/>
+        <Route path="profile" element={token ? <Profile/> : <Navigate to="/signin"/>}/>
 
 
 

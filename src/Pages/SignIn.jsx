@@ -14,6 +14,8 @@ const SignIn = () => {
     .then((response)=>{
         console.log(response)
         if(response.data.status == true){
+          localStorage.token = response.data.token
+          // localStorage.setItem(response.data.token)
           navigate('/profile')
         }else{
           setmessage(response.data.message)

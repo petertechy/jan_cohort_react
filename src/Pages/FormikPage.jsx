@@ -3,6 +3,8 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 
 const FormikPage = () => {
+  // const [first, setfirst] = useState("")
+  let emailRegex = /[a-zA-Z]+/
   const formik = useFormik({
     initialValues: {
       firstname: "",
@@ -14,7 +16,7 @@ const FormikPage = () => {
       console.log(values);
     },
     validationSchema: yup.object({
-      firstname: yup.string().required("This field is required"),
+      firstname: yup.string().required("This field is required").min(2).max(15),
       lastname: yup.string().required("This field is required"),
       email: yup
         .string()
@@ -27,6 +29,7 @@ const FormikPage = () => {
   });
   // console.log(formik.values)
   console.log(formik.touched)
+  // console.log(formik.errors)
   return (
     <>
       <h2>Sign Up Form</h2>

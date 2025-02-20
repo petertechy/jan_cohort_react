@@ -19,6 +19,7 @@ import SignIn from './Pages/SignIn'
 import Reference from './Pages/Reference'
 import ClassReact from './Pages/ClassReact'
 import Profile from './Pages/Profile'
+import FileUpload from './Pages/FileUpload'
 
 let token = localStorage.token
 
@@ -43,6 +44,8 @@ const App = () => {
         <Route path="reference" element={<Reference/>}/>
         <Route path="class" element={<ClassReact title="A new Class Component"/>}/>
         <Route path="profile" element={token ? <Profile/> : <Navigate to="/signin"/>}/>
+        
+        <Route path="file" element={<FileUpload/>}/>
 
 
 

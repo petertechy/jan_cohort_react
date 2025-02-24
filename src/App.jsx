@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Navigate, Routes, Route } from 'react-router-dom'
 import HomePage from './Pages/HomePage'
 import AboutPage from './Pages/AboutPage'
@@ -20,10 +20,22 @@ import Reference from './Pages/Reference'
 import ClassReact from './Pages/ClassReact'
 import Profile from './Pages/Profile'
 import FileUpload from './Pages/FileUpload'
+import socketClient  from 'socket.io-client'
+import Chat from './Pages/Chat'
 
 let token = localStorage.token
 
 const App = () => {
+  let endpoint = "http://localhost:5500"
+  let socket = useRef()
+  // console.log(socket.current)
+
+  useEffect(()=>{
+    socket.current = socketClient(endpoint)
+  },[])
+
+  
+
   return (
     <>
     <Navbar/>
@@ -46,7 +58,7 @@ const App = () => {
         <Route path="profile" element={token ? <Profile/> : <Navigate to="/signin"/>}/>
         
         <Route path="file" element={<FileUpload/>}/>
-
+        <Route path='chat' element={<Chat socket = {socket}/>}/>
 
 
         <Route path="/dashboard" element={<Dashboard />}>
